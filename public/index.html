@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Notes App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/script.js" defer></script>
+    <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align"><img src="logo.webp" height="60px" width="60px" alt="">YouTube Notes App</h1>
+        <div class="video-section card">
+            <div class="card-content">
+                <div class="input-field">
+                    <input type="text" id="video-id">
+                    <label for="video-id">Enter YouTube video ID or link</label>
+                </div>
+                <button class="btn waves-effect waves-light" onclick="loadVideo()">Load Video</button>
+                <div id="player" class="video-player"></div>
+            </div>
+        </div>
+        <div class="notes-section card">
+            <div class="card-content">
+                <h2>Notes</h2>
+                <div class="input-field">
+                    <textarea id="note-input" class="materialize-textarea"></textarea>
+                    <label for="note-input">Type your note here...</label>
+                </div>
+                <button class="btn waves-effect waves-light" onclick="addNote()">Add Note</button>
+                <button class="btn waves-effect waves-light" onclick="downloadNotes()">Download Notes</button>
+                <label for="note-file-upload" class="file-upload-label">Upload Notes</label>
+                <input type="file" id="note-file-upload" class="file-upload" accept=".txt, .json" onchange="handleFileUpload(event)">
+                <ul id="notes-list" class="collection"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
